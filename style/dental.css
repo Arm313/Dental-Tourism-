@@ -51,7 +51,6 @@
   border: none;
   padding: 15px 30px;
   border-radius: 8px;
-  position: relative;
   cursor: pointer;
 }
 
@@ -233,6 +232,9 @@
   flex-direction: column;
   align-items: center;
 }
+.cities img {
+  width: 100%;
+}
 .cities span {
   color: #393939;
   font-weight: 600;
@@ -304,7 +306,6 @@
   width: 60%;
   margin: 0 auto;
   padding: 70px 0 100px 0;
-
   position: relative;
 }
 .client-says h2 {
@@ -411,6 +412,9 @@
 .news {
   margin-bottom: 30px;
 }
+.news img {
+  width: 100%;
+}
 
 .news:nth-child(2) {
   padding: 0 55px;
@@ -426,7 +430,7 @@
 }
 
 .news-text {
-  width: 370px;
+  max-width: 370px;
   margin-top: 45px;
 }
 .news-text h4 {
@@ -452,11 +456,13 @@
   position: relative;
 }
 .users {
+  height: 365px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 50px;
+  overflow: hidden;
 }
 
 .team h2 {
@@ -878,9 +884,42 @@ footer {
   }
 }
 @media screen and (max-width: 680px) {
-  .foundation h1, .vacation-title, .choose h3,.how-we-work h2,.client-says h2,.div-input h3,.div-input h3{
+  .foundation h1,
+  .vacation-title,
+  .choose h3,
+  .how-we-work h2,
+  .client-says h2,
+  .div-input h3,
+  .div-input h3 {
     font-size: 26px;
   }
+
+  .client img {
+    width: 100px;
+  }
+  .client-says .fa-arrow-left,
+  .client-says .fa-arrow-right {
+    top: 40%;
+    font-size: 20px;
+  }
+  .cities {
+    max-width: 230px;
+  }
+  .news {
+    max-width: 280px;
+  }
+
+  .news img {
+    width: 100%;
+  }
+
+  .news-text {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+  }
+
   .step {
     flex-direction: column;
     align-items: center;
@@ -912,6 +951,10 @@ footer {
   .input {
     width: 100%;
     margin: 10px 0;
+  }
+
+  .user:nth-child(1), .user:nth-child(3), .user:nth-child(4) {
+    display: none;
   }
   .footer-up {
     flex-direction: column;
@@ -953,5 +996,11 @@ footer {
   }
   .card {
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .client-down {
+    flex-direction: column;
   }
 }
