@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Gilroy";
+  text-decoration: none;
 }
 .header {
   width: 90%;
@@ -39,8 +40,7 @@
   display: none;
   cursor: pointer;
 }
-.navbar-items {
-  cursor: pointer;
+.navbar-items a {
   color: #9e9e9e;
 }
 .btn {
@@ -809,23 +809,28 @@ footer {
   .close {
     display: block;
   }
+
   .navbar-ul {
-    width: 300px;
     flex-direction: column;
-    background: #000000b7;
-    text-align: center;
-    border-radius: 10px;
+    height: 0;
     position: absolute;
-    top: 10px;
-    right: -300px;
-    padding: 18px 24px;
-    transition: 0.9s;
-    z-index: 999;
-    display: none;
+    top: 120px;
+    right: 0;
+    width: 100%;
+    background: #000000b7;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 9;
   }
-  .navbar-ul li {
-    margin: 25px 0;
+  .navbar-ul.active {
+    height: 400px;
+    padding: 30px 0;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .navbar-ul li a {
     color: #fff;
+    font-size: 25px;
   }
 
   .best-clinic-that {
@@ -884,6 +889,17 @@ footer {
   }
 }
 @media screen and (max-width: 680px) {
+  .header {
+    width: 100%;
+  }
+  .navbar-ul.active {
+    height: 320px;
+  }
+
+  .navbar-ul li a {
+    font-size: 18px;
+  }
+
   .foundation h1,
   .vacation-title,
   .choose h3,
@@ -953,7 +969,9 @@ footer {
     margin: 10px 0;
   }
 
-  .user:nth-child(1), .user:nth-child(3), .user:nth-child(4) {
+  .user:nth-child(1),
+  .user:nth-child(3),
+  .user:nth-child(4) {
     display: none;
   }
   .footer-up {
@@ -976,14 +994,10 @@ footer {
     width: 250px;
     height: 35px;
     margin: 10px 0;
-    /* border-radius: 3px 0 0 3px;
-  margin-left: 5px; */
   }
   .btn-footer {
     height: 35px;
     margin: 0 0 0 -4px;
-    /* border-radius: 0 3px 3px 0;
-  padding: 0 10px; */
   }
   .fa-brands {
     font-size: 18px;
